@@ -15,6 +15,7 @@ import { config } from "../../constants/config";
 const ExperienceCard: React.FC<TExperience> = (experience) => {
   return (
     <VerticalTimelineElement
+    className="vertical-timeline-element--work"
       contentStyle={{
         background: "#1d1836",
         color: "#fff",
@@ -62,7 +63,7 @@ const Experience = () => {
       <Header useMotion={true} {...config.sections.experience} />
 
       <div className="mt-20 flex flex-col">
-        <VerticalTimeline>
+        <VerticalTimeline className="vertical-timeline-custom-line">
           {experiences.map((experience, index) => (
             <ExperienceCard key={index} {...experience} />
           ))}
@@ -72,4 +73,4 @@ const Experience = () => {
   );
 };
 
-export default SectionWrapper(Experience, "work");
+export default SectionWrapper(Experience, "works");

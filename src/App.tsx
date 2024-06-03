@@ -4,11 +4,11 @@ import {
   About,
   Contact,
   Experience,
-  Feedbacks,
+  // Feedbacks,
   Hero,
   Navbar,
   Tech,
-  Works,
+  // Works,
   StarsCanvas,
 } from "./components";
 import { useEffect } from "react";
@@ -31,11 +31,12 @@ const App = () => {
         <About />
         <Experience />
         <Tech />
-        <Works />
-        <Feedbacks />
+        {/* <Works /> */}
+        {/* <Feedbacks /> */}
         <div className="relative z-0">
           <Contact />
           <StarsCanvas />
+          <p className={`flex text-slate-700 p-1 justify-end`}>Powered by ladunjexa 3D portfolio.&nbsp;</p>
         </div>
       </div>
     </BrowserRouter>

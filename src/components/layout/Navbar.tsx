@@ -14,7 +14,7 @@ const Navbar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      if (scrollTop > 100) {
+      if (scrollTop > 820) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -32,7 +32,7 @@ const Navbar = () => {
         // @ts-ignore
         const sectionHeight = current.offsetHeight;
         const sectionTop =
-          current.getBoundingClientRect().top - sectionHeight * 0.2;
+          (current.getBoundingClientRect().top) - sectionHeight * 0.2;
 
         if (sectionTop < 0 && sectionTop + sectionHeight > 0) {
           setActive(sectionId);
@@ -53,7 +53,7 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } fixed top-0 z-20 flex w-full items-center py-5 ${
-        scrolled ? "bg-primary" : "bg-transparent"
+        scrolled ? "backdrop-blur bg-white/8" : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between">
@@ -65,7 +65,7 @@ const Navbar = () => {
           }}
         >
           <img src={logo} alt="logo" className="h-9 w-9 object-contain" />
-          <p className="flex cursor-pointer text-[18px] font-bold text-white ">
+          <p className={`flex cursor-pointer text-[18px] font-bold ${styles.clipText.gradientHighlight}`}>
             {config.html.title}
           </p>
         </Link>
@@ -75,7 +75,7 @@ const Navbar = () => {
             <li
               key={nav.id}
               className={`${
-                active === nav.id ? "text-white" : "text-secondary"
+                active === nav.id ? styles.clipText.gradientPurple : "text-secondary"
               } cursor-pointer text-[18px] font-medium hover:text-white`}
             >
               <a href={`#${nav.id}`}>{nav.title}</a>
